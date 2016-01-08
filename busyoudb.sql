@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 2016 年 1 朁E08 日 12:39
+-- Generation Time: 2016 年 1 朁E08 日 12:49
 -- サーバのバージョン： 5.6.26
 -- PHP Version: 5.6.12
 
@@ -56,6 +56,37 @@ INSERT INTO `busyou` (`busyouID`, `name`, `nickname`, `countryID`, `name1`, `nam
 ('4001', '呂布', '奉先', '4', 'りょふ', 'ほうせん', '赤兎馬、裏切り、触覚、最強'),
 ('4002', '董卓', '仲穎', '4', 'とうたく', 'ちゅうえい', '暴君、太ってた、○○連合軍（○に武将名）');
 
+-- --------------------------------------------------------
+
+--
+-- テーブルの構造 `country`
+--
+
+CREATE TABLE IF NOT EXISTS `country` (
+  `countryID` varchar(4) NOT NULL,
+  `countryname` varchar(4) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- テーブルのデータのダンプ `country`
+--
+
+INSERT INTO `country` (`countryID`, `countryname`) VALUES
+('1', '魏'),
+('2', '呉'),
+('3', '蜀'),
+('4', '他');
+
+-- --------------------------------------------------------
+
+--
+-- テーブルの構造 `quiz`
+--
+
+CREATE TABLE IF NOT EXISTS `quiz` (
+  `quizID` varchar(4) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
 --
 -- Indexes for dumped tables
 --
@@ -65,6 +96,12 @@ INSERT INTO `busyou` (`busyouID`, `name`, `nickname`, `countryID`, `name1`, `nam
 --
 ALTER TABLE `busyou`
   ADD PRIMARY KEY (`busyouID`);
+
+--
+-- Indexes for table `quiz`
+--
+ALTER TABLE `quiz`
+  ADD PRIMARY KEY (`quizID`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
